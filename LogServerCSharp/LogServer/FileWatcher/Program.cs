@@ -27,7 +27,32 @@ namespace FileWatcher {
                 Log($"Config: '{ConfigLogFolderKey}' does not exist, or is not valid.", ConsoleColor.Red);
             }
 
-            Console.ReadKey();
+            PrintHelp();
+            bool running = true;
+            while(running) {
+                var key = Console.ReadKey().Key;
+                Console.WriteLine();
+                switch(key) {
+                    case ConsoleKey.H:
+                    PrintHelp();
+                    break;
+                    case ConsoleKey.C:
+                    Data.Clear();
+                    Log("Cleared DB");
+                    break;
+                    case ConsoleKey.Q:
+                    running = false;
+                    Log("Quiting...");
+                    break;
+                }
+            }
+        }
+
+        private static void PrintHelp() {
+            Console.WriteLine("\nHelp - Press:");
+            Console.WriteLine("H: Help");
+            Console.WriteLine("C: Clear DB");
+            Console.WriteLine("Q: Quit");
         }
 
         private static void Log(string msg, ConsoleColor? ForeColor = null, ConsoleColor? BackColor = null) {

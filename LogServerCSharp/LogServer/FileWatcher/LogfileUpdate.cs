@@ -48,17 +48,22 @@ namespace FileWatcher {
         }
 
         private void AddFolderFiles() {
-            ReadFile[] savedLogs = LogData.GetReadFiles().ToArray();
-            foreach(var file in new DirectoryInfo(FolderPath).GetFiles("*.csv")) {
-                if(savedLogs.FirstOrDefault(rf => rf.FileName == file.Name) == null) {
-                    Log?.Invoke($"File '{file.Name}' is not yet in DB");
-                    var exception = CSVLogReader.AddCSVToDB(file.FullName);
-                    if(exception == null) {
-                        Log?.Invoke($"Successfully added '{file.Name}' to DB", ConsoleColor.White, ConsoleColor.DarkGreen);
-                    } else {
-                        Log?.Invoke($"Something went wrong while adding '{file.Name}' to DB:\n{exception}", ConsoleColor.Red);
+            try {
+                ReadFile[] savedLogs = LogData.GetReadFiles().ToArray();
+                foreach(var file in new DirectoryInfo(FolderPath).GetFiles("*.csv")) {
+                    if(savedLogs.FirstOrDefault(rf => rf.FileName == file.Name) == null) {
+                        Log?.Invoke($"File '{file.Name}' is not yet in DB");
+                        var exception = CSVLogReader.AddCSVToDB(file.FullName);
+                        if(exception == null) {
+                            LogData.AddReadFile(new ReadFile() { FileName = file.Name, ReadTime = DateTime.Now });
+                            Log?.Invoke($"Successfully added '{file.Name}' to DB", ConsoleColor.White, ConsoleColor.DarkGreen);
+                        } else {
+                            Log?.Invoke($"Something went wrong while adding '{file.Name}' to DB:\n{exception}", ConsoleColor.Red);
+                        }
                     }
                 }
+            } catch(Exception e) {
+                Log?.Invoke($"Something went wrong in 'AddFolderFiles()':\n{e}", ConsoleColor.Red);
             }
         }
     }
