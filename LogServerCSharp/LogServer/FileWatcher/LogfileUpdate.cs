@@ -1,4 +1,5 @@
 ﻿using Data;
+using Data.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,20 +13,30 @@ namespace FileWatcher {
 
         public event ConsoleLog Log;
 
+        private DataAccess LogData;
         private string FolderPath;
+
+        private bool Started = false;
 
         public LogfileUpdate(string folderPath, DataAccess logData) {
             FolderPath = folderPath;
-            AddFolderFiles();
+            LogData = logData;
 
-            var watcher = new FileSystemWatcher() {
-                Path = folderPath,
-                IncludeSubdirectories = false,
-                Filter = "*.csv",
-                NotifyFilter = NotifyFilters.CreationTime | NotifyFilters.FileName | NotifyFilters.LastWrite | NotifyFilters.Size,
-                EnableRaisingEvents = true
-            };
-            watcher.Changed += FolderChanged;
+            AddFolderFiles();
+        }
+
+        public void Init() {
+            if(!Started) {
+                var watcher = new FileSystemWatcher() {
+                    Path = FolderPath,
+                    IncludeSubdirectories = false,
+                    Filter = "*.csv",
+                    NotifyFilter = NotifyFilters.CreationTime | NotifyFilters.FileName | NotifyFilters.LastWrite | NotifyFilters.Size,
+                    EnableRaisingEvents = true
+                };
+                watcher.Changed += FolderChanged;
+                Log?.Invoke("Folder watcher has been set up", ConsoleColor.Green);
+            }
         }
 
         private void FolderChanged(object sender, FileSystemEventArgs e) {
@@ -34,7 +45,12 @@ namespace FileWatcher {
         }
 
         private void AddFolderFiles() {
-            //Todo
+            ReadFile[] savedLogs = LogData.GetReadFiles().ToArray();
+            foreach(var file in new DirectoryInfo(FolderPath).GetFiles("*.csv")) {
+                if(savedLogs.FirstOrDefault(rf => rf.FileName == file.Name) == null) {
+                    Log?.Invoke($"File '{file.Name}' is not yet in DB", ConsoleColor.White, ConsoleColor.DarkGreen);
+                }
+            }
         }
     }
 }

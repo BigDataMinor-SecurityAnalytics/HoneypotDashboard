@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FileWatcher {
 
@@ -24,6 +22,7 @@ namespace FileWatcher {
 
                 var lfu = new LogfileUpdate(logFolderPath, Data);
                 lfu.Log += Log;
+                lfu.Init();
             } else {
                 Log($"Config: '{ConfigLogFolderKey}' does not exist, or is not valid.", ConsoleColor.Red);
             }
