@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleLogFunc.cs" />
+    <Compile Include="CSVLogReader.cs" />
     <Compile Include="LogfileUpdate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

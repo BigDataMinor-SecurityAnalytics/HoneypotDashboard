@@ -13,14 +13,17 @@ namespace FileWatcher {
 
         public event ConsoleLog Log;
 
-        private DataAccess LogData;
-        private string FolderPath;
+        private readonly DataAccess LogData;
+        private readonly string FolderPath;
+        private readonly CSVLogReader CSVLogReader;
 
         private bool Started = false;
 
         public LogfileUpdate(string folderPath, DataAccess logData) {
             FolderPath = folderPath;
             LogData = logData;
+
+            CSVLogReader = new CSVLogReader(LogData);
 
             AddFolderFiles();
         }
@@ -48,7 +51,13 @@ namespace FileWatcher {
             ReadFile[] savedLogs = LogData.GetReadFiles().ToArray();
             foreach(var file in new DirectoryInfo(FolderPath).GetFiles("*.csv")) {
                 if(savedLogs.FirstOrDefault(rf => rf.FileName == file.Name) == null) {
-                    Log?.Invoke($"File '{file.Name}' is not yet in DB", ConsoleColor.White, ConsoleColor.DarkGreen);
+                    Log?.Invoke($"File '{file.Name}' is not yet in DB");
+                    var exception = CSVLogReader.AddCSVToDB(file.FullName);
+                    if(exception == null) {
+                        Log?.Invoke($"Successfully added '{file.Name}' to DB", ConsoleColor.White, ConsoleColor.DarkGreen);
+                    } else {
+                        Log?.Invoke($"Something went wrong while adding '{file.Name}' to DB:\n{exception}", ConsoleColor.Red);
+                    }
                 }
             }
         }
