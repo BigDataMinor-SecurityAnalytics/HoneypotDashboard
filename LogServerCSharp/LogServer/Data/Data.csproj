@@ -52,6 +52,7 @@
     <Compile Include="DataAccess.cs" />
     <Compile Include="DataInit.cs" />
     <Compile Include="LogContext.cs" />
+    <Compile Include="Models\LogEntry.cs" />
     <Compile Include="Models\ReadFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

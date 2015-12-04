@@ -49,7 +49,7 @@ namespace FileWatcher {
 
         private void AddFolderFiles() {
             try {
-                ReadFile[] savedLogs = LogData.GetReadFiles().ToArray();
+                ReadFile[] savedLogs = LogData.Context.ReadFiles.ToArray();
                 foreach(var file in new DirectoryInfo(FolderPath).GetFiles("*.csv")) {
                     if(savedLogs.FirstOrDefault(rf => rf.FileName == file.Name) == null) {
                         Log?.Invoke($"File '{file.Name}' is not yet in DB");

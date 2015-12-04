@@ -17,5 +17,9 @@ namespace Data {
         public DbSet<ReadFile> ReadFiles {
             get; set;
         }
+
+        public DbSet<LogEntry> LogEntries {
+            get; set;
+        }
     }
 }

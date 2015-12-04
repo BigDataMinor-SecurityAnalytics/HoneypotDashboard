@@ -9,7 +9,11 @@ using System.Threading.Tasks;
 namespace Data {
 
     public class DataAccess {
-        private LogContext Context;
+
+        public LogContext Context {
+            get; private set;
+        }
+
         private ObjectContext ObjContext;
 
         public DataAccess() {
@@ -17,17 +21,19 @@ namespace Data {
             ObjContext = ((System.Data.Entity.Infrastructure.IObjectContextAdapter)Context).ObjectContext;
         }
 
-        public IEnumerable<ReadFile> GetReadFiles() {
-            return Context.ReadFiles;
-        }
-
         public void AddReadFile(ReadFile file) {
             Context.ReadFiles.Add(file);
             Context.SaveChanges();
         }
 
+        public void AddLogEntry(LogEntry entry) {
+            Context.LogEntries.Add(entry);
+            Context.SaveChanges();
+        }
+
         public void Clear() {
-            Context.Database.ExecuteSqlCommand($"DELETE from {GetDBTableName<ReadFile>()}");
+            Context.Database.ExecuteSqlCommand($"DELETE FROM {GetDBTableName<ReadFile>()}");
+            Context.Database.ExecuteSqlCommand($"DELETE FROM {GetDBTableName<LogEntry>()}");
         }
 
         private string GetDBTableName<T>() where T : class {
