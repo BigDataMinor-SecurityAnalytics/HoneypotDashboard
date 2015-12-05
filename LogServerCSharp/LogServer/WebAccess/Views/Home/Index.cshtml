@@ -1,0 +1,24 @@
+﻿<div class="jumbotron">
+    <h1>HoneyBOT Logs</h1>
+    <p class="lead">Access honeybot logs via an OData web api</p>
+</div>
+<div class="row">
+    <div class="col-md-4" style="border-style:solid;">
+        <h2>Simple commands</h2>
+        <p>Access data model: <a href="/api/$metadata"><code>/api/$metadata</code></a></p>
+        <p>Access to all logs in JSon format? Try: <a href="/api/LogEntries"><code>/api/LogEntries</code></a></p>
+        <p>Lazy loading, Try: <a href="/api/LogEntries?$top=2&$skip=1"><code>/api/LogEntries?$top=2&$skip=1</code></a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Fancy stuff</h2>
+        <p>Order by: <a href="/api/LogEntries?$orderby=RemotePort desc"><code>/api/LogEntries?$orderby=RemotePort desc</code></a></p>
+        <p>Select: <a href="/api/LogEntries?$select=ID,GroupID,Protocol"><code>/api/LogEntries?$select=ID,GroupID,Protocol</code></a></p>
+        <p>Complex stuff: <a href="/api/LogEntries?$filter=ID gt 2 or RemoteIp eq '192.168.80.1'&$orderby=ID&$select=ID,GroupID,RemoteIp,RemotePort"><code>/api/LogEntries?$filter=ID gt 2 or RemoteIp eq '192.168.80.1'&$orderby=ID&$select=ID,GroupID,RemoteIp,RemotePort</code></a></p>
+        <p><a class="btn btn-default" href="href=" https//msdn.microsoft.com/en-us/library/hh169248.aspx"">More Filtering</a></p>
+    </div>
+    <div class="col-md-4" style="border-style:solid;">
+        <h2>Get by ID</h2>
+        <p>Using ID select: <a href="/api/LogEntries(2)"><code>/api/LogEntries(2)</code></a></p>
+        <p>Using a filter: <a href="/api/LogEntries?$filter=ID eq 2"><code>/api/LogEntries?$filter=ID eq 2</code></a></p>
+    </div>
+</div>
