@@ -40,5 +40,9 @@ namespace Data {
             string name = (Context as System.Data.Entity.Infrastructure.IObjectContextAdapter).ObjectContext.CreateObjectSet<T>().EntitySet.Name;
             return name;
         }
+
+        public void SaveChanges() {
+            Context.SaveChanges();
+        }
     }
 };

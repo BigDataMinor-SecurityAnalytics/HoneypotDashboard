@@ -13,7 +13,7 @@ namespace Data.Models {
             get; set;
         }
 
-        public DateTime ReadTime {
+        public DateTime LastWrite {
             get; set;
         }
     }

@@ -12,8 +12,8 @@
     <div class="col-md-4">
         <h2>Fancy stuff</h2>
         <p>Order by: <a href="/api/LogEntries?$orderby=RemotePort desc"><code>/api/LogEntries?$orderby=RemotePort desc</code></a></p>
-        <p>Select: <a href="/api/LogEntries?$select=ID,GroupID,Protocol"><code>/api/LogEntries?$select=ID,GroupID,Protocol</code></a></p>
-        <p>Complex stuff: <a href="/api/LogEntries?$filter=ID gt 2 or RemoteIp eq '192.168.80.1'&$orderby=ID&$select=ID,GroupID,RemoteIp,RemotePort"><code>/api/LogEntries?$filter=ID gt 2 or RemoteIp eq '192.168.80.1'&$orderby=ID&$select=ID,GroupID,RemoteIp,RemotePort</code></a></p>
+        <p>Select: <a href="/api/LogEntries?$select=ID,Severity,Protocol"><code>/api/LogEntries?$select=ID,Severity,Protocol</code></a></p>
+        <p>Complex stuff: <a href="/api/LogEntries?$filter=Nr lt 3 or Severity eq 'High'&$orderby=Nr&$select=Nr,Severity,RemoteIp,RemotePort"><code>/api/LogEntries?$filter=Nr lt 3 or Severity eq 'High'&$orderby=Nr&$select=Nr,Severity,RemoteIp,RemotePort</code></a></p>
         <p><a class="btn btn-default" href="href=" https//msdn.microsoft.com/en-us/library/hh169248.aspx"">More Filtering</a></p>
     </div>
     <div class="col-md-4" style="border-style:solid;">

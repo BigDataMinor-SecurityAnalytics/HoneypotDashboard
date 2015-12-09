@@ -13,17 +13,21 @@ namespace FileWatcher {
 
         public event ConsoleLog Log;
 
+        private const string FileExtension = ".log";
+        private string FileFilter => $"*{FileExtension}";
+
         private readonly DataAccess LogData;
         private readonly string FolderPath;
-        private readonly CSVLogReader CSVLogReader;
+        private readonly LogReader LogReader;
 
         private bool Started = false;
+        private long lastAddCheck = Environment.TickCount;
 
         public LogfileUpdate(string folderPath, DataAccess logData) {
             FolderPath = folderPath;
             LogData = logData;
 
-            CSVLogReader = new CSVLogReader(LogData);
+            LogReader = new LogReader(LogData);
 
             AddFolderFiles();
         }
@@ -33,8 +37,8 @@ namespace FileWatcher {
                 var watcher = new FileSystemWatcher() {
                     Path = FolderPath,
                     IncludeSubdirectories = false,
-                    Filter = "*.csv",
-                    NotifyFilter = NotifyFilters.CreationTime | NotifyFilters.FileName | NotifyFilters.LastWrite | NotifyFilters.Size,
+                    Filter = FileFilter,
+                    NotifyFilter = NotifyFilters.CreationTime | NotifyFilters.LastWrite,
                     EnableRaisingEvents = true
                 };
                 watcher.Changed += FolderChanged;
@@ -43,23 +47,36 @@ namespace FileWatcher {
         }
 
         private void FolderChanged(object sender, FileSystemEventArgs e) {
-            Log?.Invoke($"Something changed in Log folder - {e.ChangeType} : {e.Name}");
-            AddFolderFiles();
+            if(Environment.TickCount - lastAddCheck > 1000) {
+                Log?.Invoke("---", ConsoleColor.DarkBlue);
+                AddFolderFiles();
+                lastAddCheck = Environment.TickCount;
+            }
         }
 
         private void AddFolderFiles() {
             try {
                 ReadFile[] savedLogs = LogData.Context.ReadFiles.ToArray();
-                foreach(var file in new DirectoryInfo(FolderPath).GetFiles("*.csv")) {
-                    if(savedLogs.FirstOrDefault(rf => rf.FileName == file.Name) == null) {
-                        Log?.Invoke($"File '{file.Name}' is not yet in DB");
-                        var exception = CSVLogReader.AddCSVToDB(file.FullName);
+                foreach(var file in new DirectoryInfo(FolderPath).GetFiles(FileFilter).Where(f => f.Extension == FileExtension)) {
+                    var knownFile = savedLogs.FirstOrDefault(rf => rf.FileName == file.Name);
+
+                    //Add to DB Needed
+                    if(knownFile == null || knownFile.LastWrite < file.LastWriteTimeUtc) {
+                        Log?.Invoke($"DB is not up-to-date with file: '{file.Name}'");
+                        var exception = LogReader.AddLogToDB(file.FullName);
                         if(exception == null) {
-                            LogData.AddReadFile(new ReadFile() { FileName = file.Name, ReadTime = DateTime.Now });
-                            Log?.Invoke($"Successfully added '{file.Name}' to DB", ConsoleColor.White, ConsoleColor.DarkGreen);
+                            if(knownFile != null) {
+                                knownFile.LastWrite = file.LastWriteTimeUtc;
+                                LogData.SaveChanges();
+                            } else {
+                                LogData.AddReadFile(new ReadFile() { FileName = file.Name, LastWrite = file.LastWriteTimeUtc });
+                            }
+                            Log?.Invoke($"Successfully updated DB with '{file.Name}'", ConsoleColor.White, ConsoleColor.DarkGreen);
                         } else {
-                            Log?.Invoke($"Something went wrong while adding '{file.Name}' to DB:\n{exception}", ConsoleColor.Red);
+                            Log?.Invoke($"Something went wrong while syncing '{file.Name}' with DB:\n{exception}", ConsoleColor.Red);
                         }
+                    } else {
+                        Log?.Invoke($"No DB sync necessary for {file.Name}");
                     }
                 }
             } catch(Exception e) {

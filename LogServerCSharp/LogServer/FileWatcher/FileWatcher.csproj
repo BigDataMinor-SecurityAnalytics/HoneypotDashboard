@@ -54,13 +54,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleLogFunc.cs" />
-    <Compile Include="CSVLogReader.cs" />
+    <Compile Include="LogReader.cs" />
     <Compile Include="LogfileUpdate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

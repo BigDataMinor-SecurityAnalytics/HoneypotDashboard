@@ -12,12 +12,15 @@ namespace FileWatcher {
         private const string ConfigLogFolderKey = "LogFilesFolder";
 
         private static void Main(string[] args) {
+#if !DEBUG
+            try {
+#endif
             Log($"Started Log-Watcher @ {DateTime.Now}");
 
             var settings = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None).AppSettings.Settings;
             string logFolderPath = string.Empty;
             if(settings.AllKeys.Contains(ConfigLogFolderKey) && Directory.Exists(logFolderPath = settings[ConfigLogFolderKey].Value)) {
-                Log($"Log folder set to: '{logFolderPath}'", ConsoleColor.Green);
+                Log($"Log folder set to: '{logFolderPath}'");
                 Data = new DataAccess();
 
                 var lfu = new LogfileUpdate(logFolderPath, Data);
@@ -46,6 +49,13 @@ namespace FileWatcher {
                     break;
                 }
             }
+#if !DEBUG
+        } catch(Exception e) {
+                Log($"Unable to handle exception:\n{e}", ConsoleColor.Red);
+                Console.ReadKey();
+                Environment.Exit(-1);
+            }
+#endif
         }
 
         private static void PrintHelp() {

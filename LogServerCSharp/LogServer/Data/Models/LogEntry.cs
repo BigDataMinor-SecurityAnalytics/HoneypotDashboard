@@ -12,7 +12,11 @@ namespace Data.Models {
             get; set;
         }
 
-        public Guid GroupID {
+        public int Nr {
+            get; set;
+        }
+
+        public string RemoteDomain {
             get; set;
         }
 
@@ -32,6 +36,10 @@ namespace Data.Models {
             get; set;
         }
 
+        public string TargetService {
+            get; set;
+        }
+
         public string Protocol {
             get; set;
         }
@@ -44,7 +52,7 @@ namespace Data.Models {
             get; set;
         }
 
-        public bool Incomming {
+        public string Severity {
             get; set;
         }
 
