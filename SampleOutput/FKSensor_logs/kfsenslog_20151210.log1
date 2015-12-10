@@ -1,0 +1,36 @@
+<event sensorid="kfsensor" id="34" type="Connection" action="ReadAndClose" name="MS Uni Plug and Play" protocol="TCP" severity="High">
+  <start>2015-12-10 00:01:12:937</start>
+  <end>2015-12-10 00:01:16:937</end>
+  <client domain="65.52.240.48" ip="127.0.0.1" port="2026" />
+  <host ip="127.0.0.1" bindip="" port="5000" />
+  <connection closedby="Server" />
+  <recBytes>296</recBytes>
+  <received size="296" coding="kf"><![CDATA[GET / HTTP/1.1%0D%0A
+Host: localhost:5000%0D%0A
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:42.0) Gecko/20100101 Firefox/42.0%0D%0A
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8%0D%0A
+Accept-Language: en-GB,en;q=0.5%0D%0A
+Accept-Encoding: gzip, deflate%0D%0A
+DNT: 1%0D%0A
+Connection: keep-alive%0D%0A
+%0D%0A
+]]></received>
+</event>
+<event sensorid="kfsensor" id="35" type="Connection" action="ReadAndClose" name="MS Uni Plug and Play" protocol="TCP" severity="High">
+  <start>2015-12-10 00:01:16:938</start>
+  <end>2015-12-10 00:01:20:941</end>
+  <client domain="65.52.240.48" ip="127.0.0.1" port="2027" />
+  <host ip="127.0.0.1" bindip="" port="5000" />
+  <connection closedby="Server" />
+  <recBytes>296</recBytes>
+  <received size="296" coding="kf"><![CDATA[GET / HTTP/1.1%0D%0A
+Host: localhost:5000%0D%0A
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:42.0) Gecko/20100101 Firefox/42.0%0D%0A
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8%0D%0A
+Accept-Language: en-GB,en;q=0.5%0D%0A
+Accept-Encoding: gzip, deflate%0D%0A
+DNT: 1%0D%0A
+Connection: keep-alive%0D%0A
+%0D%0A
+]]></received>
+</event>

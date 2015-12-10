@@ -1,0 +1,510 @@
+<event sensorid="kfsensor" id="1" type="Connection" desc="url;GET /| host;localhost| agent;Mozilla/5.0 (Windows NT 6.1'; WOW64'; rv:42.0) Gecko/20100101 Firefox/42.0" action="SimStdServer" name="IIS" simname="IIS" protocol="TCP" severity="Medium">
+  <start>2015-12-09 13:33:37:428</start>
+  <client domain="65.52.240.48" ip="127.0.0.1" port="1870" />
+  <host ip="127.0.0.1" bindip="" port="80" />
+  <connection closedby="Server" />
+  <recBytes>291</recBytes>
+  <received size="291" coding="kf"><![CDATA[GET / HTTP/1.1%0D%0A
+Host: localhost%0D%0A
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:42.0) Gecko/20100101 Firefox/42.0%0D%0A
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8%0D%0A
+Accept-Language: en-GB,en;q=0.5%0D%0A
+Accept-Encoding: gzip, deflate%0D%0A
+DNT: 1%0D%0A
+Connection: keep-alive%0D%0A
+%0D%0A
+]]></received>
+  <sentBytes>957</sentBytes>
+  <sent size="415" coding="kf"><![CDATA[HTTP/1.1 200 OK%0D%0A
+Content-Type: text/html%0D%0A
+Last-Modified: Fri, 20 Jun 2008 16:10:44 GMT%0D%0A
+Accept-Ranges: bytes%0D%0A
+ETag: "350c7c75bbf829d:a4a"%0D%0A
+Server: Microsoft-IIS/7.5%0D%0A
+X-Powered-By: ASP.NET%0D%0A
+Date: Wed, 09 Dec 2015 13:33:37 GMT%0D%0A
+Connection: close%0D%0A
+Content-Length: 689%0D%0A
+%0D%0A
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">%0D%0A
+[... recorded 111 of 689 bytes...]%0D%0A
+]]></sent>
+</event>
+<event sensorid="kfsensor" id="2" type="Connection" desc="url;GET /welcome.png| host;localhost| agent;Mozilla/5.0 (Windows NT 6.1'; WOW64'; rv:42.0) Gecko/20100101 Firefox/42.0| referer;http://localhost/" action="SimStdServer" name="IIS" simname="IIS" protocol="TCP" severity="Medium">
+  <start>2015-12-09 13:33:37:475</start>
+  <end>2015-12-09 13:33:37:477</end>
+  <client domain="65.52.240.48" ip="127.0.0.1" port="1871" />
+  <host ip="127.0.0.1" bindip="" port="80" />
+  <connection closedby="Server" />
+  <recBytes>300</recBytes>
+  <received size="300" coding="kf"><![CDATA[GET /welcome.png HTTP/1.1%0D%0A
+Host: localhost%0D%0A
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:42.0) Gecko/20100101 Firefox/42.0%0D%0A
+Accept: image/png,image/*;q=0.8,*/*;q=0.5%0D%0A
+Accept-Language: en-GB,en;q=0.5%0D%0A
+Accept-Encoding: gzip, deflate%0D%0A
+DNT: 1%0D%0A
+Referer: http://localhost/%0D%0A
+Connection: keep-alive%0D%0A
+%0D%0A
+]]></received>
+  <sentBytes>185217</sentBytes>
+  <sent size="314" coding="kf"><![CDATA[HTTP/1.1 200 OK%0D%0A
+Content-Type: image/png%0D%0A
+Last-Modified: Fri, 20 Jun 2008 16:10:44 GMT%0D%0A
+Accept-Ranges: bytes%0D%0A
+ETag: "12ad8f4e70ad157:a4a"%0D%0A
+Server: Microsoft-IIS/7.5%0D%0A
+X-Powered-By: ASP.NET%0D%0A
+Date: Wed, 09 Dec 2015 13:33:37 GMT%0D%0A
+Connection: close%0D%0A
+Content-Length: 184946%0D%0A
+%0D%0A
+%89PNG%0D%0A
+[... recorded 6 of 184946 bytes...]%0D%0A
+]]></sent>
+</event>
+<event sensorid="kfsensor" id="3" type="Connection" desc="url;GET /favicon.ico| host;localhost| agent;Mozilla/5.0 (Windows NT 6.1'; WOW64'; rv:42.0) Gecko/20100101 Firefox/42.0" action="SimStdServer" name="IIS" simname="IIS" protocol="TCP" severity="Medium">
+  <start>2015-12-09 13:33:37:538</start>
+  <end>2015-12-09 13:33:37:539</end>
+  <client domain="65.52.240.48" ip="127.0.0.1" port="1872" />
+  <host ip="127.0.0.1" bindip="" port="80" />
+  <connection closedby="Server" />
+  <recBytes>302</recBytes>
+  <received size="302" coding="kf"><![CDATA[GET /favicon.ico HTTP/1.1%0D%0A
+Host: localhost%0D%0A
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:42.0) Gecko/20100101 Firefox/42.0%0D%0A
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8%0D%0A
+Accept-Language: en-GB,en;q=0.5%0D%0A
+Accept-Encoding: gzip, deflate%0D%0A
+DNT: 1%0D%0A
+Connection: keep-alive%0D%0A
+%0D%0A
+]]></received>
+  <sentBytes>519</sentBytes>
+  <sent size="466" coding="kf"><![CDATA[HTTP/1.1 404 Not Found%0D%0A
+Content-Type: text/html; charset=us-ascii%0D%0A
+Server: Microsoft-IIS/7.5%0D%0A
+X-Powered-By: ASP.NET%0D%0A
+Date: Wed, 09 Dec 2015 13:33:37 GMT%0D%0A
+Connection: close%0D%0A
+Content-Length: 323%0D%0A
+%0D%0A
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd">%0D%0A
+<HTML><HEAD><TITLE>Not Found</TITLE>%0D%0A
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=us-ascii"></HEAD>%0D%0A
+<BODY><h2>Not Found</h2>%0D%0A
+[... recorded 234 of 323 bytes...]%0D%0A
+]]></sent>
+</event>
+<event sensorid="kfsensor" id="4" type="Connection" desc="url;GET /favicon.ico| host;localhost| agent;Mozilla/5.0 (Windows NT 6.1'; WOW64'; rv:42.0) Gecko/20100101 Firefox/42.0" action="SimStdServer" name="IIS" simname="IIS" protocol="TCP" severity="Medium">
+  <start>2015-12-09 13:33:37:542</start>
+  <end>2015-12-09 13:33:37:543</end>
+  <client domain="65.52.240.48" ip="127.0.0.1" port="1873" />
+  <host ip="127.0.0.1" bindip="" port="80" />
+  <connection closedby="Server" />
+  <recBytes>302</recBytes>
+  <received size="302" coding="kf"><![CDATA[GET /favicon.ico HTTP/1.1%0D%0A
+Host: localhost%0D%0A
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:42.0) Gecko/20100101 Firefox/42.0%0D%0A
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8%0D%0A
+Accept-Language: en-GB,en;q=0.5%0D%0A
+Accept-Encoding: gzip, deflate%0D%0A
+DNT: 1%0D%0A
+Connection: keep-alive%0D%0A
+%0D%0A
+]]></received>
+  <sentBytes>519</sentBytes>
+  <sent size="466" coding="kf"><![CDATA[HTTP/1.1 404 Not Found%0D%0A
+Content-Type: text/html; charset=us-ascii%0D%0A
+Server: Microsoft-IIS/7.5%0D%0A
+X-Powered-By: ASP.NET%0D%0A
+Date: Wed, 09 Dec 2015 13:33:37 GMT%0D%0A
+Connection: close%0D%0A
+Content-Length: 323%0D%0A
+%0D%0A
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd">%0D%0A
+<HTML><HEAD><TITLE>Not Found</TITLE>%0D%0A
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=us-ascii"></HEAD>%0D%0A
+<BODY><h2>Not Found</h2>%0D%0A
+[... recorded 234 of 323 bytes...]%0D%0A
+]]></sent>
+</event>
+<event sensorid="kfsensor" id="5" type="Connection" action="SimStdServer" name="IIS" simname="IIS" protocol="TCP" severity="Medium">
+  <start>2015-12-09 13:38:32:886</start>
+  <end>2015-12-09 13:38:37:887</end>
+  <client domain="65.52.240.48" ip="127.0.0.1" port="1898" />
+  <host ip="127.0.0.1" bindip="" port="80" />
+  <connection closedby="Client" />
+</event>
+<event sensorid="kfsensor" id="6" type="Connection" action="SimStdServer" name="IIS" simname="IIS" protocol="TCP" severity="Medium">
+  <start>2015-12-09 13:38:32:892</start>
+  <end>2015-12-09 13:38:38:888</end>
+  <client domain="65.52.240.48" ip="127.0.0.1" port="1899" />
+  <host ip="127.0.0.1" bindip="" port="80" />
+  <connection closedby="Client" />
+</event>
+<event sensorid="kfsensor" id="7" type="Connection" desc="url;GET /db| host;localhost| agent;Mozilla/5.0 (Windows NT 6.1'; WOW64'; rv:42.0) Gecko/20100101 Firefox/42.0" action="SimStdServer" name="IIS" simname="IIS" protocol="TCP" severity="Medium">
+  <start>2015-12-09 13:39:04:146</start>
+  <end>2015-12-09 13:39:04:147</end>
+  <client domain="65.52.240.48" ip="127.0.0.1" port="1915" />
+  <host ip="127.0.0.1" bindip="" port="80" />
+  <connection closedby="Server" />
+  <recBytes>293</recBytes>
+  <received size="293" coding="kf"><![CDATA[GET /db HTTP/1.1%0D%0A
+Host: localhost%0D%0A
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:42.0) Gecko/20100101 Firefox/42.0%0D%0A
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8%0D%0A
+Accept-Language: en-GB,en;q=0.5%0D%0A
+Accept-Encoding: gzip, deflate%0D%0A
+DNT: 1%0D%0A
+Connection: keep-alive%0D%0A
+%0D%0A
+]]></received>
+  <sentBytes>519</sentBytes>
+  <sent size="466" coding="kf"><![CDATA[HTTP/1.1 404 Not Found%0D%0A
+Content-Type: text/html; charset=us-ascii%0D%0A
+Server: Microsoft-IIS/7.5%0D%0A
+X-Powered-By: ASP.NET%0D%0A
+Date: Wed, 09 Dec 2015 13:39:04 GMT%0D%0A
+Connection: close%0D%0A
+Content-Length: 323%0D%0A
+%0D%0A
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd">%0D%0A
+<HTML><HEAD><TITLE>Not Found</TITLE>%0D%0A
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=us-ascii"></HEAD>%0D%0A
+<BODY><h2>Not Found</h2>%0D%0A
+[... recorded 234 of 323 bytes...]%0D%0A
+]]></sent>
+</event>
+<event sensorid="kfsensor" id="8" type="Connection" action="SimStdServer" name="IIS" simname="IIS" protocol="TCP" severity="Medium">
+  <start>2015-12-09 13:40:14:347</start>
+  <end>2015-12-09 13:40:19:348</end>
+  <client domain="65.52.240.48" ip="127.0.0.1" port="1921" />
+  <host ip="127.0.0.1" bindip="" port="80" />
+  <connection closedby="Client" />
+</event>
+<event sensorid="kfsensor" id="9" type="Connection" action="SimStdServer" name="IIS" simname="IIS" protocol="TCP" severity="Medium">
+  <start>2015-12-09 13:40:14:347</start>
+  <end>2015-12-09 13:40:19:348</end>
+  <client domain="65.52.240.48" ip="127.0.0.1" port="1922" />
+  <host ip="127.0.0.1" bindip="" port="80" />
+  <connection closedby="Client" />
+</event>
+<event sensorid="kfsensor" id="10" type="Connection" action="SimStdServer" name="DHCP" protocol="UDP" severity="Low">
+  <start>2015-12-09 23:00:49:935</start>
+  <client domain="Middencomputer.home" ip="192.168.2.65" port="68" />
+  <host ip="" bindip="" port="67" />
+  <connection closedby="Client" />
+  <recBytes>537</recBytes>
+  <received size="537" coding="kf"><![CDATA[DHCP: Boot Request%0A
+Hardware type: Ethernet (10Mb)%0A
+Hardware address length: 6%0A
+Hops: 0%0A
+Transaction ID: 9235795D%0A
+Seconds elapsed: 0%0A
+Flags: Unicast%0A
+Client IP: 192.168.2.65%0A
+Your (client) IP: 0.0.0.0%0A
+Next server IP: 0.0.0.0%0A
+Relay agent IP: 0.0.0.0%0A
+Client MAC: 64:70:02:E9:A9:E5%0A
+Server host name: {name not supplied}%0A
+Boot file name: {name not supplied}%0A
+Magic number: OK%0A
+Option 53: Message type = %0A
+Option 61: Client identifier %0A
+Option 12: Host name = "Middencomputer"%0A
+Option 60: Vendor class id = "MSFT 5.0"%0A
+Option 55: Parameter request list%0D%0A
+%0D%0A
+]]></received>
+</event>
+<event sensorid="kfsensor" id="11" type="Connection" action="SimStdServer" name="DHCP" protocol="UDP" severity="Low">
+  <start>2015-12-09 23:01:00:941</start>
+  <client domain="Middencomputer.home" ip="192.168.2.64" port="68" />
+  <host ip="" bindip="" port="67" />
+  <connection closedby="Client" />
+  <recBytes>539</recBytes>
+  <received size="539" coding="kf"><![CDATA[DHCP: Boot Request%0A
+Hardware type: Ethernet (10Mb)%0A
+Hardware address length: 6%0A
+Hops: 0%0A
+Transaction ID: FC6BFCD4%0A
+Seconds elapsed: 0%0A
+Flags: Broadcast%0A
+Client IP: 192.168.2.64%0A
+Your (client) IP: 0.0.0.0%0A
+Next server IP: 0.0.0.0%0A
+Relay agent IP: 0.0.0.0%0A
+Client MAC: 54:04:A6:EF:30:ED%0A
+Server host name: {name not supplied}%0A
+Boot file name: {name not supplied}%0A
+Magic number: OK%0A
+Option 53: Message type = %0A
+Option 61: Client identifier %0A
+Option 12: Host name = "Middencomputer"%0A
+Option 60: Vendor class id = "MSFT 5.0"%0A
+Option 55: Parameter request list%0D%0A
+%0D%0A
+]]></received>
+</event>
+<event sensorid="kfsensor" id="12" type="Connection" desc="url;GET /| host;localhost:8080| agent;Mozilla/5.0 (Windows NT 6.1'; WOW64'; rv:42.0) Gecko/20100101 Firefox/42.0" action="SimStdServer" name="IIS Proxy" simname="IIS Proxy" protocol="TCP" severity="Medium">
+  <start>2015-12-09 23:01:05:433</start>
+  <end>2015-12-09 23:01:05:434</end>
+  <client domain="65.52.240.48" ip="127.0.0.1" port="1937" />
+  <host ip="127.0.0.1" bindip="" port="8080" />
+  <connection closedby="Server" />
+  <recBytes>296</recBytes>
+  <received size="296" coding="kf"><![CDATA[GET / HTTP/1.1%0D%0A
+Host: localhost:8080%0D%0A
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:42.0) Gecko/20100101 Firefox/42.0%0D%0A
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8%0D%0A
+Accept-Language: en-GB,en;q=0.5%0D%0A
+Accept-Encoding: gzip, deflate%0D%0A
+DNT: 1%0D%0A
+Connection: keep-alive%0D%0A
+%0D%0A
+]]></received>
+  <sentBytes>957</sentBytes>
+  <sent size="957" coding="kf"><![CDATA[HTTP/1.1 200 OK%0D%0A
+Content-Type: text/html%0D%0A
+Last-Modified: Fri, 20 Jun 2008 16:10:44 GMT%0D%0A
+Accept-Ranges: bytes%0D%0A
+ETag: "350c7c75bbf829d:a4a"%0D%0A
+Server: Microsoft-IIS/7.5%0D%0A
+X-Powered-By: ASP.NET%0D%0A
+Date: Wed, 09 Dec 2015 23:01:05 GMT%0D%0A
+Connection: close%0D%0A
+Content-Length: 689%0D%0A
+%0D%0A
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">%0D%0A
+<html xmlns="http://www.w3.org/1999/xhtml">%0D%0A
+<head>%0D%0A
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />%0D%0A
+<title>IIS7</title>%0D%0A
+<style type="text/css">%0D%0A
+<!--%0D%0A
+body {%0D%0A
+%09color:#000000;%0D%0A
+%09background-color:#B3B3B3;%0D%0A
+%09margin:0;%0D%0A
+}%0D%0A
+%0D%0A
+#container {%0D%0A
+%09margin-left:auto;%0D%0A
+%09margin-right:auto;%0D%0A
+%09text-align:center;%0D%0A
+%09}%0D%0A
+%0D%0A
+a img {%0D%0A
+%09border:none;%0D%0A
+}%0D%0A
+%0D%0A
+-->%0D%0A
+</style>%0D%0A
+</head>%0D%0A
+<body>%0D%0A
+<div id="container">%0D%0A
+<a href="http://go.microsoft.com/fwlink/?linkid=66138&amp;clcid=0x409"><img src="welcome.png" alt="IIS7" width="571" height="411" /></a>%0D%0A
+</div>%0D%0A
+</body>%0D%0A
+</html>]]></sent>
+</event>
+<event sensorid="kfsensor" id="13" type="Connection" desc="url;GET /welcome.png| host;localhost:8080| agent;Mozilla/5.0 (Windows NT 6.1'; WOW64'; rv:42.0) Gecko/20100101 Firefox/42.0| referer;http://localhost:8080/" action="SimStdServer" name="IIS Proxy" simname="IIS Proxy" protocol="TCP" severity="Medium">
+  <start>2015-12-09 23:01:05:495</start>
+  <end>2015-12-09 23:01:05:500</end>
+  <client domain="65.52.240.48" ip="127.0.0.1" port="1938" />
+  <host ip="127.0.0.1" bindip="" port="8080" />
+  <connection closedby="Server" />
+  <recBytes>310</recBytes>
+  <received size="310" coding="kf"><![CDATA[GET /welcome.png HTTP/1.1%0D%0A
+Host: localhost:8080%0D%0A
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:42.0) Gecko/20100101 Firefox/42.0%0D%0A
+Accept: image/png,image/*;q=0.8,*/*;q=0.5%0D%0A
+Accept-Language: en-GB,en;q=0.5%0D%0A
+Accept-Encoding: gzip, deflate%0D%0A
+DNT: 1%0D%0A
+Referer: http://localhost:8080/%0D%0A
+Connection: keep-alive%0D%0A
+%0D%0A
+]]></received>
+  <sentBytes>185217</sentBytes>
+  <sent size="2090" coding="kf"><![CDATA[HTTP/1.1 200 OK%0D%0A
+Content-Type: image/png%0D%0A
+Last-Modified: Fri, 20 Jun 2008 16:10:44 GMT%0D%0A
+Accept-Ranges: bytes%0D%0A
+ETag: "12ad8f4e70ad157:a4a"%0D%0A
+Server: Microsoft-IIS/7.5%0D%0A
+X-Powered-By: ASP.NET%0D%0A
+Date: Wed, 09 Dec 2015 23:01:05 GMT%0D%0A
+Connection: close%0D%0A
+Content-Length: 184946%0D%0A
+%0D%0A
+%89PNG%0D%0A
+%1A%0A
+%00%00%00%0DIHDR%00%00%02;%00%00%01%9B%08%02%00%00%00%AD@%C6%7F%00%02%D29IDATx^%EC%C0A%09%00%00%08%00%B1{%D8%BF%8C%05%CD!l%ED%07%000%D5%B1k%07%A9%0D%C3@%18%85+[m%EE%E8%FB%1F%C2%B5#%BB%C3%0C%FE%19%84%13T%E8%AE%EF[%88Q%12%93%E5cBF%9C%E7%F9%8BO%FE{%00%80R%CA%DF~%B2%0E%86%E7t%9A5%8C%E7%0A
+%00@%B4%F4J%1E%06%03V%DF%B7%EALt%D5%9CJ%F6%0E%00%00%C5%C5%A0%ABfQ_b%CE%EA%AB\%1D%C7%A1 %D9%DC%0D2R,%00%00%CA%9Di%9A4%A8X6G%80%E2z_%ACn%91R%A2Zk%87%8Bk%1E%F4%88N%01%00 %EFU*%93N%99%E7Y%AF[\%8A%EB%A2Uos%95%CB%14%B9j%C9%E1%14%B3%91%DF%06%01%00%FC%1E%18Y26X%9C%E2%AC%B5%DA`M%89W%143%7FP%D1R%B1%92%9C%AB%E6%9E%CE%868%F7}%D7[%DD%A6e4%00%00%A0%D8%E4%BDjv6T%D7Z%B3k%CC%D1%11%05,%1E%97yY%16%95&%DA%A3\=/V%A9m%DB%D6u%FDv%EB%25f%0D:%05%00%80%ED%B2_b%05%0A
+%FA%DBD%8E\q%F9z%BFc)W%FB%25%BE/%86%FCeq%AAs%ACY%02%00%E8%F2%A3%ED%AA%BAO%F7%E5Zk%8F%C7C)%B1w%8B{%F9%CF%0BmW]%B1%B4H%E5ZF%B4T%AC%1C-%01%00%E0%87%B7s%DB%D5,%B9%09p%D9{&0%13%84%88B%12qP@$%C0E%1E%81%07%80g%E0a%E1>%02%05%14%B8%80%11%07%91%9B%C9%91(3%DD%E9I%F7.3%EDC}%F2x%AD%AD%8D%D2P%DD{-%97%CBu%AEU.%BB\%F5K%B9%C6%AE%9CW%FD%86%BB%CFY%09L%A4%E8%0F%10%EA%C1%C1%B1%CA}%81]%FD%D2%DD%8B%97/%FF%F3%A7%9F%FC%F0%D3%CF>y}%92|%CF%A3{%BA*%14%CD%11%87%B1%06.%83%F0%0A
+%FF%9E%F0.%11%F5D,%81B%03%90%E6y]%E4B%10d%8D2%D1 !%00%01%11X%7F%B4%04%08M%B0%08z,%BC`f ^2 %D7%A7%C8%C1%CC%82%00[%11%88%08%DEV%1AsZ%FCP%CAuEgF%BD%FC%C0%9D%84%CC$%D3w%E06=%E9t5%F2x%80%89%BC%CC%DF"o%81%1C%FFc%90V%06d/"I22%A7%F1f%AB%E1_%86%0F%13'%87%01%AD%FE9%E8%01%12%80Uh%D0%A3%C5%00%03.a%DE%93J%FCy%002o%B0x%1C%B3%04%AA8%10%DCf%BB%EC%EA%0FO%12%D7K%02M%AA%B6L%C8%817%94%CD;%FE%A8%06%DE%0B%8Cu%1C%E5%1F%15%BAK%91%FA%E2%A5%81&%19}=%B1 %C8%97%08t<%14=.Xc$9%AA%07%01%1A%94%00f{-)`%19%E98x%EF%A5`%BD%A8%E4GI_%DBz%1D!od%BD%F9%AD%F7^%FE%EE%87%EF%FF%C9W%7F%FB%D8C%08N%D8%CAj%FBX%EER%BAr%17%EC*D%AB%CF%D9%D5%CF~%F1%C9%DF%FF%E0%E7?z%F1%E6%D5%DEkI2%96`%04}Rwl%06%97o%AD%F2%04%D0%A1dw%E1%AD%08%9A%11D%DFzU%DFbU`BaC%12%18%92%AF%82%05%98%8F%CE%AE%00%DD%F5%B25d%A0%B4J%EA%D0"%08%12%0F%AC%88%1A%98%0C%89(%F9%AEF%C9%82T%DC,dPhV%83%1C%98%CB%C9(%92kI%93%92H%F7%F6%F2%1E%82%E6%A8%94.%BC%DA%A9%94%A2zM%A3I%AA%80%EA%91%19%0CE%AB"%01+%19%01k%FA%0B%10%C5%A7%A0U#F"%1D %DE%12U%7F&%25%01%EE%E1A%82%A4%9E%81%F9o%05%E5%CAb%B8%DF%D3%F4%8E%ADb%AC%08%8D%1E%A3%99%97%04%D9t%D5%C3%05y,'%0E?%B1%C4h%AC%00%CA)%CFw%E3%16%A0U%C26%02%81W%02Yh%00%C2%FCa%D1.%8C[%96c*%C1%F6%1C%8E%04`%FF%E1%95%84I%97%E6%E5%13%A6d5%DA%18%8A%90%B3|%C2%9B$%94%8A%9C%A2`%95`%C0%E4%E3%04%07CT%EA%19p9)%04%1Do%15%D9N2T%8A%92%AE%A2s2%1A%BA-%ACn%91%85! %C1%05%0A
+%02s%BF%19%F8h%193%07%AC-$%17%8D(%CB%F0%D6%B3c %06%06 %D6g%DB%FE%FB%D5%FE%F8%17%AF~%E7K%F2%FE%83%AAj%88b%F9L%87%DD%E0[%8E5%F4%81%98Z%BC%95%AE^%BC%FC%BB%1F%FC%EC%D3%D7%8F%FBq%1B%83E%E8YxW%F6M%01`%00TW%CE:%BA4y%D2[o%C3%AF"[K%F5%C8p$B%E2%B3_f%FF%CD%BE%9C%BDLB%8D%1C%88%19<%CB%83%88@o'%92%EE%15%C61%0C%8C?x%BD%14%FD%1A%F2%1E%ED'$%C2%18%87]S%FEt%D0%85%17%D1C+Dk%AA%0FX5%BDA#%BA%80%BDkD%B58G6Cx%815;%D9%C3=~%ABk%C1t%CE%ACv%93|%C1%9CY%D0%01u%D8%91b%CB%82L%8A%E5%84TnY$%E7%A7U:[%AA*Q%11%CD%9Ah>%E2+%D5%1Ak%9A%A1,%97%96%00%C3>%86%B7%FF/%1C%9D%05%D9:%C0*%18%DDB%F5%D0RS%D3h%D0*%FF%8AP%AF%91--&g^%8F%98P%02%88%95%88c%02%F0%A6K%C0]%1F%BD%B4%F9%98]%A6%83+%00%C3i%F8@o`mk%25%95|%1B%AB%1A%A5!%25%0A
+%AE%01G%CD%96N6C%91%18E%14,1%B3Z%F4%10%CD0kz%D7%043!%BC%B7%AE%C8%DA%D7J%D4Q%C2%894%E0w%E3`%C6%EE%01%80CSJ%9Eh%A7%00%04<%03%AC%AF%C0%0F%F5%1B[?y%F1%EA%1B%1F%BE%B5q%D7r%07%16%9C`+%18L%EB%8D%BB`W%A1%12%FC%8F%1F%FF%FC%C7/_%BF~|%0C%E1%E6p%0B%86%DE%80%9F%06rnS%F7%EA S%C8Z,y%D2%9B%0D%FA%BC%E5%06%F4%94%FC%90A9j%0A
+%DC+Nw%D6%9B%DE%15%1C%DEE%1A%EE%C8%8D%CED%15U%A10%1D2'%9C9%158%FCd4%D7%16%8D%E7%F1%C1%C2%A7%1B%DC)q%A2W%1EU%C8%EE%1Ce=@%EBN%80%D6%E8m%CC%95RPO%E1%C5%CE%D7%14e%E0%DB"%A7,^%91%A8%87%95%D7R%8E*F%94O'Q%0D%B6MEeY$%01%B2O%B7%8Bb%07%DD%D2%C8%BA%98?]Xs%10%E2k%E7#%DA%97I%E9-d%C2%92%F0%D4Y%F3%10%C6Qc4%08F%0D@%9E%19j%809%10%ABA%91~&%19%95%86%C5%F8{8%A1%BE0%A5.%C6P%B1"%A3z%C0%B3%14%A4u)%B6%91%BF4%0Cl%D4%F1@xG:D%80%06/%B4%ACK/&%25%809%A7u%CC%F5%BEL%C7%0Fu%F8E%AC%F4BqK6%B7W c%C8&%028 %B1%D7{%D9%E3%E3W>x%FF%ECua%04%AFz%0D%0A
+[... recorded 1777 of 184946 bytes...]%0D%0A
+]]></sent>
+</event>
+<event sensorid="kfsensor" id="14" type="Connection" desc="url;GET /favicon.ico| host;localhost:8080| agent;Mozilla/5.0 (Windows NT 6.1'; WOW64'; rv:42.0) Gecko/20100101 Firefox/42.0" action="SimStdServer" name="IIS Proxy" simname="IIS Proxy" protocol="TCP" severity="Medium">
+  <start>2015-12-09 23:01:05:579</start>
+  <end>2015-12-09 23:01:05:580</end>
+  <client domain="65.52.240.48" ip="127.0.0.1" port="1939" />
+  <host ip="127.0.0.1" bindip="" port="8080" />
+  <connection closedby="Server" />
+  <recBytes>307</recBytes>
+  <received size="307" coding="kf"><![CDATA[GET /favicon.ico HTTP/1.1%0D%0A
+Host: localhost:8080%0D%0A
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:42.0) Gecko/20100101 Firefox/42.0%0D%0A
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8%0D%0A
+Accept-Language: en-GB,en;q=0.5%0D%0A
+Accept-Encoding: gzip, deflate%0D%0A
+DNT: 1%0D%0A
+Connection: keep-alive%0D%0A
+%0D%0A
+]]></received>
+  <sentBytes>519</sentBytes>
+  <sent size="519" coding="kf"><![CDATA[HTTP/1.1 404 Not Found%0D%0A
+Content-Type: text/html; charset=us-ascii%0D%0A
+Server: Microsoft-IIS/7.5%0D%0A
+X-Powered-By: ASP.NET%0D%0A
+Date: Wed, 09 Dec 2015 23:01:05 GMT%0D%0A
+Connection: close%0D%0A
+Content-Length: 323%0D%0A
+%0D%0A
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd">%0D%0A
+<HTML><HEAD><TITLE>Not Found</TITLE>%0D%0A
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=us-ascii"></HEAD>%0D%0A
+<BODY><h2>Not Found</h2>%0D%0A
+<hr><p>HTTP Error 404. The system cannot find the file specified.%0D%0A
+</p>%0D%0A
+</BODY></HTML>%0D%0A
+]]></sent>
+</event>
+<event sensorid="kfsensor" id="15" type="Connection" desc="url;GET /favicon.ico| host;localhost:8080| agent;Mozilla/5.0 (Windows NT 6.1'; WOW64'; rv:42.0) Gecko/20100101 Firefox/42.0" action="SimStdServer" name="IIS Proxy" simname="IIS Proxy" protocol="TCP" severity="Medium">
+  <start>2015-12-09 23:01:05:590</start>
+  <end>2015-12-09 23:01:05:591</end>
+  <client domain="65.52.240.48" ip="127.0.0.1" port="1940" />
+  <host ip="127.0.0.1" bindip="" port="8080" />
+  <connection closedby="Server" />
+  <recBytes>307</recBytes>
+  <received size="307" coding="kf"><![CDATA[GET /favicon.ico HTTP/1.1%0D%0A
+Host: localhost:8080%0D%0A
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:42.0) Gecko/20100101 Firefox/42.0%0D%0A
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8%0D%0A
+Accept-Language: en-GB,en;q=0.5%0D%0A
+Accept-Encoding: gzip, deflate%0D%0A
+DNT: 1%0D%0A
+Connection: keep-alive%0D%0A
+%0D%0A
+]]></received>
+  <sentBytes>519</sentBytes>
+  <sent size="519" coding="kf"><![CDATA[HTTP/1.1 404 Not Found%0D%0A
+Content-Type: text/html; charset=us-ascii%0D%0A
+Server: Microsoft-IIS/7.5%0D%0A
+X-Powered-By: ASP.NET%0D%0A
+Date: Wed, 09 Dec 2015 23:01:05 GMT%0D%0A
+Connection: close%0D%0A
+Content-Length: 323%0D%0A
+%0D%0A
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd">%0D%0A
+<HTML><HEAD><TITLE>Not Found</TITLE>%0D%0A
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=us-ascii"></HEAD>%0D%0A
+<BODY><h2>Not Found</h2>%0D%0A
+<hr><p>HTTP Error 404. The system cannot find the file specified.%0D%0A
+</p>%0D%0A
+</BODY></HTML>%0D%0A
+]]></sent>
+</event>
+<event sensorid="kfsensor" id="16" type="Connection" action="SimStdServer" name="NBT Datagram Service" protocol="UDP" severity="Low">
+  <start>2015-12-09 23:01:32:353</start>
+  <client domain="DanyPC" ip="192.168.2.30" port="138" />
+  <host ip="" bindip="" port="138" />
+  <connection closedby="Client" />
+  <recBytes>164</recBytes>
+  <received size="164" coding="kf"><![CDATA[NBT DGRAM Packet: id:40078  Type: Direct Group%0D%0A
+Source: DANYPC<00 Workstation Service>%0D%0A
+Destination: WORKGROUP<1d Master Browser>%0D%0A
+SMB: [trans] %0D%0A
+    name: {}%0D%0A
+%0D%0A
+%0D%0A
+]]></received>
+</event>
+<event sensorid="kfsensor" id="17" type="Connection" action="SimStdServer" name="NBT Datagram Service" protocol="UDP" severity="Low">
+  <start>2015-12-09 23:01:32:575</start>
+  <client domain="EXPERIA" ip="192.168.2.253" port="138" />
+  <host ip="" bindip="" port="138" />
+  <connection closedby="Client" />
+  <recBytes>174</recBytes>
+  <received size="174" coding="kf"><![CDATA[NBT DGRAM Packet: id:48335  Type: Direct Group%0D%0A
+Source: EXPERIA<00 Workstation Service>%0D%0A
+Destination: %01%02__MSBROWSE__%02<01 Messenger Service>%0D%0A
+SMB: [trans] %0D%0A
+    name: {}%0D%0A
+%0D%0A
+%0D%0A
+]]></received>
+</event>
+<event sensorid="kfsensor" id="18" type="Connection" action="SimStdServer" name="DHCP" protocol="UDP" severity="Low">
+  <start>2015-12-09 23:01:40:139</start>
+  <client domain="Middencomputer" ip="0.0.0.0" port="68" />
+  <host ip="" bindip="" port="67" />
+  <connection closedby="Client" />
+  <recBytes>573</recBytes>
+  <received size="573" coding="kf"><![CDATA[DHCP: Boot Request%0A
+Hardware type: Ethernet (10Mb)%0A
+Hardware address length: 6%0A
+Hops: 0%0A
+Transaction ID: 121DE881%0A
+Seconds elapsed: 0%0A
+Flags: Unicast%0A
+Client IP: 0.0.0.0%0A
+Your (client) IP: 0.0.0.0%0A
+Next server IP: 0.0.0.0%0A
+Relay agent IP: 0.0.0.0%0A
+Client MAC: 00:00:00:00:00:0B%0A
+Server host name: {name not supplied}%0A
+Boot file name: {name not supplied}%0A
+Magic number: OK%0A
+Option 53: Message type = DHCP REQUEST%0A
+Option 61: Client identifier %0A
+Option 50: Requested IP %0A
+Option 12: Host name = "DanyPC"%0A
+Option 81: %0A
+Option 60: Vendor class id = "MSFT 5.0"%0A
+Option 55: Parameter request list%0D%0A
+%0D%0A
+]]></received>
+</event>
+<event sensorid="kfsensor" id="19" type="Native Connection" desc="Broadcast Packet" action="Native" name="DHCP Client" protocol="UDP" severity="Low" isBroadcast="TRUE">
+  <start>2015-12-09 23:01:40:154</start>
+  <client domain="" ip="192.168.2.254" port="67" />
+  <host ip="255.255.255.255" bindip="" port="68" />
+  <connection closedby="Client" />
+  <recBytes>300</recBytes>
+  <received size="300" coding="kf"><![CDATA[%02%01%06%00%12%1D%E8%81%00%00%00%00%00%00%00%00%C0%A8%02%0A
+%C0%A8%02%FE%00%00%00%00%00%00%00%00%00%0B%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00c%82Sc5%01%056%04%C0%A8%02%FE3%04%00%01Q%80%01%04%FF%FF%FF%00%03%04%C0%A8%02%FE%1C%04%C0%A8%02%FF%0F%05home%00%06%0C%C0%A8%02%FE%C3y%01"%C3y%01B%FF%00%00%00%00%00]]></received>
+</event>
+<event sensorid="kfsensor" id="20" type="Connection" action="SimStdServer" name="NBT Datagram Service" protocol="UDP" severity="Low">
+  <start>2015-12-09 23:01:45:295</start>
+  <client domain="DanyPC" ip="192.168.2.10" port="138" />
+  <host ip="" bindip="" port="138" />
+  <connection closedby="Client" />
+  <recBytes>164</recBytes>
+  <received size="164" coding="kf"><![CDATA[NBT DGRAM Packet: id:40101  Type: Direct Group%0D%0A
+Source: DANYPC<00 Workstation Service>%0D%0A
+Destination: WORKGROUP<1d Master Browser>%0D%0A
+SMB: [trans] %0D%0A
+    name: {}%0D%0A
+%0D%0A
+%0D%0A
+]]></received>
+</event>
