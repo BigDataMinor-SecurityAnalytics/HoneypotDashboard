@@ -57,7 +57,7 @@ namespace FileWatcher {
         private void AddFolderFiles() {
             try {
                 ReadFile[] savedLogs = LogData.Context.ReadFiles.ToArray();
-                foreach(var file in new DirectoryInfo(FolderPath).GetFiles(FileFilter).Where(f => f.Extension == FileExtension)) {
+                foreach(var file in new DirectoryInfo(FolderPath).GetFiles(FileFilter).Where(f => f.Extension == FileExtension && f.Name.StartsWith("kfsenslog_"))) {
                     var knownFile = savedLogs.FirstOrDefault(rf => rf.FileName == file.Name);
 
                     //Add to DB Needed
