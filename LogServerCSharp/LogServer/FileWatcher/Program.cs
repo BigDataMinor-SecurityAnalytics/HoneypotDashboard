@@ -43,6 +43,9 @@ namespace FileWatcher {
                     Data.Clear();
                     Log("Cleared DB");
                     break;
+                    case ConsoleKey.S:
+                    PrintStats();
+                    break;
                     case ConsoleKey.Q:
                     running = false;
                     Log("Quiting...");
@@ -62,7 +65,13 @@ namespace FileWatcher {
             Console.WriteLine("\nHelp - Press:");
             Console.WriteLine("H: Help");
             Console.WriteLine("C: Clear DB");
+            Console.WriteLine("S: Stats");
             Console.WriteLine("Q: Quit");
+        }
+
+        private static void PrintStats() {
+            Console.WriteLine("\nStats:");
+            Console.WriteLine($"ReadFiles: {Data.Context.ReadFiles.Count()}\nLogEntries: {Data.Context.LogEntries.Count()}\n");
         }
 
         private static void Log(string msg, ConsoleColor? ForeColor = null, ConsoleColor? BackColor = null) {
