@@ -8,7 +8,7 @@ using System.Linq;
 namespace FileWatcher {
 
     internal class Program {
-        private static DataAccess Data;
+        private static DataAccess DataAcc;
         private const string ConfigLogFolderKey = "LogFilesFolder";
 
         private static void Main(string[] args) {
@@ -16,19 +16,27 @@ namespace FileWatcher {
             try {
 #endif
             Log($"Started Log-Watcher @ {DateTime.Now}");
-
             var settings = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None).AppSettings.Settings;
             string logFolderPath = string.Empty;
             if(settings.AllKeys.Contains(ConfigLogFolderKey) && Directory.Exists(logFolderPath = settings[ConfigLogFolderKey].Value)) {
                 Log($"Log folder set to: '{logFolderPath}'");
-                Data = new DataAccess();
+                DataAcc = new DataAccess();
 
-                var lfu = new LogfileUpdate(logFolderPath, Data);
+                var lfu = new LogfileUpdate(logFolderPath, DataAcc);
                 lfu.Log += Log;
                 lfu.Init();
             } else {
                 Log($"Config: '{ConfigLogFolderKey}' does not exist, or is not valid.", ConsoleColor.Red);
             }
+
+            IPLocate.Init();
+            Log($"Read IP locations");
+
+            foreach(var entry in DataAcc.Context.LogEntries.Where(le => le.Country == null)) {
+                var calced = IPLocate.GetIpCountry(entry.RemoteIp);
+                entry.Country = calced;
+            }
+            DataAcc.SaveChanges();
 
             PrintHelp();
             bool running = true;
@@ -40,7 +48,7 @@ namespace FileWatcher {
                     PrintHelp();
                     break;
                     case ConsoleKey.C:
-                    Data.Clear();
+                    DataAcc.Clear();
                     Log("Cleared DB");
                     break;
                     case ConsoleKey.S:
@@ -71,7 +79,7 @@ namespace FileWatcher {
 
         private static void PrintStats() {
             Console.WriteLine("\nStats:");
-            Console.WriteLine($"ReadFiles: {Data.Context.ReadFiles.Count()}\nLogEntries: {Data.Context.LogEntries.Count()}\n");
+            Console.WriteLine($"ReadFiles: {DataAcc.Context.ReadFiles.Count()}\nLogEntries: {DataAcc.Context.LogEntries.Count()}\n");
         }
 
         private static void Log(string msg, ConsoleColor? ForeColor = null, ConsoleColor? BackColor = null) {

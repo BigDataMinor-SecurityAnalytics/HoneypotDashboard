@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleLogFunc.cs" />
+    <Compile Include="IPLocate.cs" />
     <Compile Include="LogReader.cs" />
     <Compile Include="LogfileUpdate.cs" />
     <Compile Include="Program.cs" />
@@ -62,6 +63,9 @@
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="iploc.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

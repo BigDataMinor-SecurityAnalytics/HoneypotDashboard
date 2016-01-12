@@ -59,5 +59,9 @@ namespace Data.Models {
         public DateTime Time {
             get; set;
         }
+
+        public string Country {
+            get; set;
+        }
     }
 }

@@ -96,6 +96,9 @@ namespace FileWatcher {
                 }
             }
 
+            var gottenCountry = IPLocate.GetIpCountry(newEntry.RemoteIp);
+            newEntry.Country = gottenCountry;
+
             return newEntry;
         }
     }
