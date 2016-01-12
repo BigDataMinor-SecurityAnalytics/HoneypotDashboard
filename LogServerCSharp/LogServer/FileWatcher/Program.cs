@@ -15,6 +15,9 @@ namespace FileWatcher {
 #if !DEBUG
             try {
 #endif
+            IPLocate.Init();
+            Log($"Read IP locations");
+
             Log($"Started Log-Watcher @ {DateTime.Now}");
             var settings = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None).AppSettings.Settings;
             string logFolderPath = string.Empty;
@@ -29,12 +32,15 @@ namespace FileWatcher {
                 Log($"Config: '{ConfigLogFolderKey}' does not exist, or is not valid.", ConsoleColor.Red);
             }
 
-            IPLocate.Init();
-            Log($"Read IP locations");
-
             foreach(var entry in DataObj.Context.LogEntries.Where(le => le.Country == null)) {
-                var calced = IPLocate.GetIpCountry(entry.RemoteIp);
-                entry.Country = calced;
+                try {
+                    if(!string.IsNullOrEmpty(entry.RemoteIp)) {
+                        var calced = IPLocate.GetIpCountry(entry.RemoteIp);
+                        entry.Country = calced;
+                    }
+                } catch(Exception e) {
+                    var v = 0;
+                }
             }
             DataObj.SaveChanges();
 
@@ -87,8 +93,8 @@ namespace FileWatcher {
                 var entry = DataObj.Context.LogEntries.OrderBy(le => le.ID).Skip(r).First();
                 Console.WriteLine($"Random (#{r}) entry:");
                 foreach(var prop in typeof(Data.Models.LogEntry).GetProperties()) {
-                    var val = prop.GetValue(entry).ToString();
-                    if(val.Length > 30)
+                    var val = prop.GetValue(entry)?.ToString();
+                    if(val != null && val.Length > 30)
                         val = val.Substring(0, 29);
                     Console.WriteLine($"{prop.Name}: {val}");
                 }

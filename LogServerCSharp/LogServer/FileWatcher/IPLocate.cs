@@ -6,7 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace FileWatcher {
+
     public static class IPLocate {
+
+        public static bool Inited {
+            get; private set;
+        } = false;
 
         private static List<Tuple<uint, uint, string>> IpRanges;
 
@@ -27,6 +32,7 @@ namespace FileWatcher {
                     IpRanges.Add(new Tuple<uint, uint, string>(uint.Parse(inFrom), uint.Parse(inTo), inName));
                 }
             }
+            Inited = true;
         }
 
         public static string GetIpCountry(string ip) {

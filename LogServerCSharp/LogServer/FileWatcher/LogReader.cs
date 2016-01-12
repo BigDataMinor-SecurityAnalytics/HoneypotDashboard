@@ -96,8 +96,14 @@ namespace FileWatcher {
                 }
             }
 
-            var gottenCountry = IPLocate.GetIpCountry(newEntry.RemoteIp);
-            newEntry.Country = gottenCountry;
+            try {
+                if(!string.IsNullOrEmpty(newEntry.RemoteIp)) {
+                    var gottenCountry = IPLocate.GetIpCountry(newEntry.RemoteIp);
+                    newEntry.Country = gottenCountry;
+                }
+            } catch(Exception e) {
+                newEntry.Country = string.Empty;
+            }
 
             return newEntry;
         }
